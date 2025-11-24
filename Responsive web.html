@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure</title>
+    <style>
+        /* css */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      html  body {
+            overflow-x: hidden;
+        }
+        a{
+            text-decoration: none;
+        }
+        /* navbar */
+        .navbar{
+            display: flex;
+            position: absolute;
+            top:0;
+            left: 0;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: whitesmoke;
+            width: 100%;
+        }
+        ul{
+            list-style: none;
+        }
+        .nav-links{
+            display: flex;
+            align-items: center;
+        }
+        .nav-links li{
+            margin: 0 30px;
+        }
+        .active{
+            color: #fc036b;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        header{
+            width: 100vw;
+            height: 100vh;
+            background-image: url("rosie-sun-1L71sPT5XKc-unsplash.jpg");
+            /* background-position: center center; */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-content{
+            color: whitesmoke;
+            text-align: center;
+        }
+        .header-content h2{
+            font-size: 4vmin;
+        }
+        .line{
+            width: 150px;
+            height: 4px;
+            background-color: #fc036b;
+            border-radius: 5px;
+            margin: 10px auto;
+        }
+        .header-content h1{
+            font-size: 7vmin;
+            margin: 50px;
+            margin-bottom: 30px;
+        }
+        .ctn{
+            padding: 8px 15px;
+            background-color: #fc036b;
+            border-radius: 30px;
+            color: whitesmoke;
+            border: none;
+        }
+        .menu-btn{
+            position:absolute;
+            top: 30px;
+            right: 30px;
+            width: 40px;
+            cursor: pointer;
+        }
+        /* mobile */
+        @media only screen and (max-width:850px){
+            .navbar{
+                padding: 0;
+            
+            }
+            .logo{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+            }
+            .navbar svg{
+                    top: 35px;
+    right: 28px;
+    position: absolute;
+            }
+            .nav-links{
+                flex-direction: column;
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                background-color: rgb(63, 63,104);
+                margin-top: -900px;
+                transition: all 0.5s ease;
+            }
+            .mobile-menu{
+                margin-top: 0px;
+                border-bottom-right-radius: 30px;
+            }
+            .nav-links li{
+                margin: 30px auto;
+            }
+            /* events */
+            .row{
+                flex-direction: column;
+            }
+            .row .col{
+                margin: 20px auto;
+            }
+            .col img{
+                max-width: 90%;
+            }
+            /* exploree */
+            .explore-contant{
+                width: 100%;
+            }
+            .tours .col{
+                width: 100%;
+            }
+            .image-gallery{
+                justify-content: center;
+                align-items: center;
+            }
+            .image-gallery img{
+                width: 90%;
+            }
+            .footer{
+                padding: 10px;
+            }
+        }
+            /*Events  */
+            section{
+                width: 80%;
+                margin: 50px auto;
+            }
+            .events .row{
+                margin: 50px;
+            }
+            .title{
+                text-align: center;
+                font-size: 4vmin;
+                color: #49497e;
+            }
+            .row{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .row .col{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            h4{
+                font-size: 3vmin;
+                margin: 20px;
+                color: #484872;
+            }
+            p{
+                padding: 0px 40;
+                color: #7c7c7c;
+                width:70%;
+            }
+            .events .ctn{
+                margin-top: 40px;
+            }
+            /* --explore */
+            .explore{
+                width: 100%;
+                height: 100vh;
+                background-image: url("ari-shojaei-qQO3Kr7J7ms-unsplash.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                /* align-items: center; */
+            }
+            .explore-contant{
+                width: 60%;
+                padding: 50px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .explore-contant h1{
+                font-size: 7vmin;
+                /* margin: 50px; */
+            }
+            .explore-contant p{
+                color: rgb(221,221,221);
+            }
+            .explore-contant .ctn{
+                margin-top: 40px;
+            }
+            .explore-contant .line{
+                margin-bottom:50px;
+            }
+            /* ==tours== */
+            .tours .image-gallery{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                align-items: center;
+            }
+            .image-gallery img{
+                max-width: 250px;
+                margin: 10px;
+            }
+            .content-col h1{
+                font-size: 7vmin;
+                color: #484872;
+            }
+            .content-col .line{
+                margin-left: -1px;
+            }
+            .content-col p{
+                padding: 0px;
+                margin: 30px auto;
+            }
+            .content-col .ctn{
+                margin-left: -100px;
+            }
+            /* ==footer== */
+            .footer{
+                width: 100%;
+                min-height: 100px;
+                padding: 20px 80px;
+                margin: 0;
+                background-color: #484872;
+                text-align: center;
+            }
+            .footer p{
+                color: whitesmoke;
+                margin: 20px auto;
+            }
+            /* animations */
+            img{
+                transition: transform .3s ease;
+            }
+            img:hover{
+                transform: scale(1.1);
+            }
+            .ctn:hover{
+                background-color: whitesmoke;
+                color: #fc036b;
+                box-shadow: 2px 2px 5px #00000056;
+            }
+            li:hover{
+                color: #fc036b;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+     <div class="navbar">
+     <h1 class="logo">ADVENTURE</h1>
+        <ul class="nav-links">
+            <li class="active"><a href=""></a>Home</li>
+            <li><a href=""></a>Tours</li>
+            <li><a href=""></a>Explore</li>
+            <li><a href=""></a>About</li>
+            <li class="ctn"><a  href=""></a>Contact</li>
+        </ul>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-text-cursor-icon lucide-text-cursor"><path d="M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1"/><path d="M7 22h1a4 4 0 0 0 4-4v-1"/><path d="M7 2h1a4 4 0 0 1 4 4v1"/></svg>
+     </div>
+
+    <header>
+        <div class="header-content">
+            <h2>Explore The Colorfull World</h2>
+            <div class="line"></div>
+            <h1>A WONDERFUL GIFT</h1>
+            <button class="ctn">Learn More</button>
+        </div>
+    </header>
+
+    <!-- ==events== -->
+    <section class="events">
+        <div class="title">
+            <h1>Upcoming Events</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="OIP 2.jpg" alt="">
+                <h4>Walking Holidays</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, possimus animi quam veritatis ut facilis ex ea iusto recusandae voluptas!.</p>
+                <a href="" class="ctn">Learn More</a>
+            </div>
+
+            <div class="col">
+                <img src="OIP 3.jpg" alt="">
+                <h4>Walking Holidays</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, possimus animi quam veritatis ut facilis ex ea iusto recusandae voluptas!.</p>
+                <a href="" class="ctn">Learn More</a>
+            </div>
+    
+        </div>
+
+    </section>
+
+    <!-- ==explore -->
+    <div class="explore">
+        <div class="explore-contant">
+            <h1>exolore THE WORLD</h1>
+            <div class="line"></div>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima natus sunt odit reprehenderit deserunt doloribus omnis eum animi, quas iste aperiam eveniet, corporis dolorum?</P>
+        <a href="#" class="ctn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- ==tours-- -->
+    <section class="tours">
+        <div class="row">
+            <div class="col  content-col">
+                <h1>UPCOMING TOURS & DESTINATION</h1>
+                <div class="line"></div>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veritatis, vel illum dicta magnam dolor obcaecati iusto suscipit est at fugiat nobis odio quos itaque harum delectus? Repellat, id sint.</P>
+                <a href="#" class="ctn">Learn More</a>
+            </div>
+            <div class="col image-col">
+                <div class="image-gallery">
+                    <img src="OIP 5.jpg" alt="">
+                    <img src="OIP 6.jpg" alt="">
+                    <img src="OIP 7.jpg" alt="">
+                    <img src="OIP 8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --==footer== -->
+     <section class="footer">
+        
+    <p>123 Fifth Avenue, My 10160, New York, USA| Phone: 800-123-456 |Email:contact@123</p>
+    <p>Copyright @ 2020 Ourdoor Adventure</p>
+     </section>
+
+</body>
+</html>
