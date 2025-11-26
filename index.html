@@ -23,6 +23,7 @@
             position: absolute;
             top:0;
             left: 0;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
@@ -59,7 +60,7 @@
             text-align: center;
         }
         .header-content h2{
-            font-size: 4vmin;
+            font-size: 6vmin;
         }
         .line{
             width: 150px;
@@ -87,102 +88,46 @@
             width: 40px;
             cursor: pointer;
         }
-        /* mobile */
-        @media only screen and (max-width:850px){
-            .navbar{
-                padding: 0;
-            
-            }
-            .logo{
-                position: absolute;
-                top: 30px;
-                left: 30px;
-            }
-            .navbar svg{
-                    top: 35px;
-    right: 28px;
-    position: absolute;
-            }
-            .nav-links{
-                flex-direction: column;
-                width: 100%;
-                height: 100vh;
-                justify-content: center;
-                background-color: rgb(63, 63,104);
-                margin-top: -900px;
-                transition: all 0.5s ease;
-            }
-            .mobile-menu{
-                margin-top: 0px;
-                border-bottom-right-radius: 30px;
-            }
-            .nav-links li{
-                margin: 30px auto;
-            }
-            /* events */
-            .row{
-                flex-direction: column;
-            }
+        
+            /*Events  */
             .row .col{
-                margin: 20px auto;
-            }
-            .col img{
-                max-width: 90%;
-            }
-            /* exploree */
-            .explore-contant{
-                width: 100%;
-            }
-            .tours .col{
-                width: 100%;
-            }
-            .image-gallery{
-                justify-content: center;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
             }
-            .image-gallery img{
-                width: 90%;
-            }
-            .footer{
-                padding: 10px;
-            }
-        }
-            /*Events  */
             section{
                 width: 80%;
                 margin: 50px auto;
             }
             .events .row{
-                margin: 50px;
+                margin: 50px 0;
+                padding: 0px 50px;
+                justify-content: center;
             }
             .title{
                 text-align: center;
-                font-size: 4vmin;
+                font-size: 30px;
                 color: #49497e;
             }
+             .col h4{
+                font-size:20px;
+                margin: 20px auto;
+                color: #484872;
+            }
+            p{
+                font-size: 18px;
+                color: #7c7c7c;
+                width:400px;
+                 margin: 20px auto;
+            }
+            .events .ctn{
+            margin: 30px;
+        }
             .row{
                 display: flex;
                 align-items: center;
                 width: 100%;
                 justify-content: space-between;
-            }
-            .row .col{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            h4{
-                font-size: 3vmin;
-                margin: 20px;
-                color: #484872;
-            }
-            p{
-                padding: 0px 40;
-                color: #7c7c7c;
-                width:70%;
-            }
-            .events .ctn{
-                margin-top: 40px;
             }
             /* --explore */
             .explore{
@@ -193,7 +138,7 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 display: flex;
-                /* align-items: center; */
+                align-items: center;
             }
             .explore-contant{
                 width: 60%;
@@ -209,6 +154,7 @@
             }
             .explore-contant p{
                 color: rgb(221,221,221);
+        
             }
             .explore-contant .ctn{
                 margin-top: 40px;
@@ -218,14 +164,13 @@
             }
             /* ==tours== */
             .tours .image-gallery{
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                align-items: center;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
             }
             .image-gallery img{
                 max-width: 250px;
-                margin: 10px;
+                padding: 10px;
+                /* margin: 100px; */
             }
             .content-col h1{
                 font-size: 7vmin;
@@ -234,13 +179,10 @@
             .content-col .line{
                 margin-left: -1px;
             }
-            .content-col p{
+            /* .content-col p{
                 padding: 0px;
-                margin: 30px auto;
-            }
-            .content-col .ctn{
-                margin-left: -100px;
-            }
+                /* margin: 30px -1px; */
+            } */
             /* ==footer== */
             .footer{
                 width: 100%;
@@ -270,7 +212,172 @@
                 color: #fc036b;
                 cursor: pointer;
             }
+           .header-content h2{
+            transform: translateY(0px);
+            transition: opacity 1 ease;
+           }
+           .header-content h2:hover{
+            transform: translateY(0);
+           }
         /* nothing just like that */
+
+        /* =mob= */ 
+         @media only screen and (max-width:350px){
+             .navbar{
+                padding: 0;
+            
+            }
+            .logo{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                font-size: 25px;
+            }
+            /* =navbar= */
+            .nav-links{
+                flex-direction: column;
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                background-color: #484872;
+                margin-top: -900px;
+                transition: 0.5s ease;
+            }
+            .nav-links li{
+                margin: 30px auto;
+            }
+            .navbar svg{
+                    top: 30px;
+                    right: 28px;
+                    position: absolute;
+                    width: 30px;
+            }
+            /* =header= */
+            .row{
+                flex-direction: column;
+            }
+            .col img{
+                max-width: 90%;
+            }
+             .header-content{
+            color: whitesmoke;
+            text-align: center;
+        }
+        .header-content h2{
+            font-size:24px;
+        }
+        .header-content h1{
+            font-size: 20px;
+            margin: 50px;
+            margin-bottom: 30px;
+        }
+        .ctn{
+            padding: 10px 20px;
+            background-color: #fc036b;
+            border-radius: 30px;
+            color: whitesmoke;
+            border: none;
+        }
+            /* events */
+            .events .row{
+                margin: 0px 0;
+                padding: 10px 50px;
+                justify-content: center;
+            }
+            .title{
+                text-align: center;
+                font-size: 15px;
+                color: #49497e;
+            }
+            .col img{
+                max-width: 170%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            .row .col{
+                margin: 20px auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .col h4{
+                font-size:11px;
+                margin: 20px;
+                color: #484872;
+            }
+            p{
+                color: #7c7c7c;
+                width:170%;
+            }
+            /* exploree */
+             .explore-contant{
+                width: 100%;
+                padding: 50px 0px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .explore-contant h1{
+                font-size:25px;
+            }
+             .explore-contant p{
+                color: rgb(221,221,221);
+                padding: 0px 20%;
+                font-size: 20px;
+                font-weight: 300;
+                width: 400px;
+            }
+            .explore-contant .ctn{
+                margin-top: 40px;
+            }
+            /* =tours= */
+            .tours{
+                width: 100%;
+                padding: 30px 20px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .content-col h1{
+            font-size: 25px;
+           }
+            .content-col p{
+                padding: 0px 0%;
+                font-size: 20px;
+                font-weight: 300;
+                width: 300px;
+            }
+              #image-gallery img{
+                width: 90%;
+              }
+            .tours .col{
+                width: 100%;
+            }
+            #image-gallary{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+             .image-gallery img{
+                max-width: 250px;
+                margin: 10px;
+            }
+           .footer{
+                width: 100%;
+                min-height: 100px;
+                padding: 10px 10px;
+                margin: 0;
+                background-color: #484872;
+                text-align: center;
+            }
+            .footer p{
+                color: whitesmoke;
+                margin: 20px auto;
+                width:300px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -284,12 +391,12 @@
             <li><a href=""></a>About</li>
             <li class="ctn"><a  href=""></a>Contact</li>
         </ul>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-text-cursor-icon lucide-text-cursor"><path d="M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1"/><path d="M7 22h1a4 4 0 0 0 4-4v-1"/><path d="M7 2h1a4 4 0 0 1 4 4v1"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon lucide-list"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg>
      </div>
 
     <header>
         <div class="header-content">
-            <h2>Explore The Colorfull World</h2>
+            <h2>Explore The Colorful World</h2>
             <div class="line"></div>
             <h1>A WONDERFUL GIFT</h1>
             <button class="ctn">Learn More</button>
@@ -302,16 +409,16 @@
             <h1>Upcoming Events</h1>
             <div class="line"></div>
         </div>
-        <div class="row">
+        <div class="row" style="gap: 5%;">
             <div class="col">
-                <img src="OIP 2.jpg" alt="">
-                <h4>Walking Holidays</h4>
+                <img src="OIP 2.jpg" alt="" width="400vw" height="223px">
+                <h4>Everest Camp Trek</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, possimus animi quam veritatis ut facilis ex ea iusto recusandae voluptas!.</p>
                 <a href="" class="ctn">Learn More</a>
             </div>
 
             <div class="col">
-                <img src="OIP 3.jpg" alt="">
+                <img src="download (1).webp" alt="" width="400px" height="223px">
                 <h4>Walking Holidays</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, possimus animi quam veritatis ut facilis ex ea iusto recusandae voluptas!.</p>
                 <a href="" class="ctn">Learn More</a>
@@ -324,7 +431,7 @@
     <!-- ==explore -->
     <div class="explore">
         <div class="explore-contant">
-            <h1>exolore THE WORLD</h1>
+            <h1>EXPLORE THE WORLD</h1>
             <div class="line"></div>
         <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima natus sunt odit reprehenderit deserunt doloribus omnis eum animi, quas iste aperiam eveniet, corporis dolorum?</P>
         <a href="#" class="ctn">Learn More</a>
@@ -341,11 +448,11 @@
                 <a href="#" class="ctn">Learn More</a>
             </div>
             <div class="col image-col">
-                <div class="image-gallery">
-                    <img src="OIP 5.jpg" alt="">
-                    <img src="OIP 6.jpg" alt="">
-                    <img src="OIP 7.jpg" alt="">
-                    <img src="OIP 8.jpg" alt="">
+                <div id="image-gallary"  class="image-gallery">
+                    <img src="OIP 5.jpg" alt="" width="270px" height="223px">
+                    <img src="OIP 6.jpg" alt="" width="270px" height="223px">
+                    <img src="OIP 7.jpg" alt="" width="270px" height="223px">
+                    <img src="OIP 8.jpg" alt="" width="270px" height="223px">
                 </div>
             </div>
         </div>
