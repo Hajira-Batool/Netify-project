@@ -11,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-      html  body {
+      body {
             overflow-x: hidden;
         }
         a{
@@ -58,16 +58,19 @@
         .header-content{
             color: whitesmoke;
             text-align: center;
+            animation-name: textmove;
+            animation: 4s ease;
         }
         .header-content h2{
             font-size: 6vmin;
         }
-        .line{
+       header .line{
             width: 150px;
             height: 4px;
             background-color: #fc036b;
             border-radius: 5px;
-            margin: 10px auto;
+            margin: 5px auto;
+          
         }
         .header-content h1{
             font-size: 7vmin;
@@ -95,15 +98,19 @@
                 flex-direction: column;
                 align-items: center;
             }
-            section{
-                width: 80%;
-                margin: 50px auto;
-            }
+            
             .events .row{
                 margin: 50px 0;
                 padding: 0px 50px;
                 justify-content: center;
             }
+            .events .line{
+            width: 150px;
+            height: 4px;
+            background-color: #fc036b;
+            border-radius: 5px;
+            margin: 5px auto;
+        }
             .title{
                 text-align: center;
                 font-size: 30px;
@@ -114,7 +121,7 @@
                 margin: 20px auto;
                 color: #484872;
             }
-            p{
+             .col p{
                 font-size: 18px;
                 color: #7c7c7c;
                 width:400px;
@@ -127,41 +134,56 @@
                 display: flex;
                 align-items: center;
                 width: 100%;
-                justify-content: space-between;
+                justify-content: center;
+                column-gap: 10%;
+                padding: 10px 5%;
             }
             /* --explore */
             .explore{
                 width: 100%;
                 height: 100vh;
+                position: relative;
                 background-image: url("ari-shojaei-qQO3Kr7J7ms-unsplash.jpg");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
                 display: flex;
                 align-items: center;
+                margin-bottom: 20px;
             }
             .explore-contant{
-                width: 60%;
+                /* width: 60%; */
                 padding: 50px;
                 color: whitesmoke;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 flex-direction: column;
             }
             .explore-contant h1{
-                font-size: 7vmin;
+                font-size: 60px;
                 /* margin: 50px; */
             }
             .explore-contant p{
+                width: 80%;
+                font-size: 20px;
                 color: rgb(221,221,221);
+                padding: 40px 65px;
+                text-align: center;
         
             }
             .explore-contant .ctn{
-                margin-top: 40px;
+                margin-top: 30px;
             }
             .explore-contant .line{
-                margin-bottom:50px;
-            }
+            width: 150px;
+            height: 4px;
+            background-color: #fc036b;
+            border-radius: 5px;
+            margin: 5px auto;
+              z-index: 2;
+        }
+            
             /* ==tours== */
             .tours .image-gallery{
               display: grid;
@@ -170,32 +192,21 @@
             .image-gallery img{
                 max-width: 250px;
                 padding: 10px;
-                /* margin: 100px; */
             }
             .content-col h1{
                 font-size: 7vmin;
+                text-align: center;
                 color: #484872;
             }
             .content-col .line{
-                margin-left: -1px;
+            width: 150px;
+            height: 4px;
+            background-color: #fc036b;
+            border-radius: 5px;
+            margin: 5px auto;
             }
-            /* .content-col p{
-                padding: 0px;
-                /* margin: 30px -1px; */
-            } */
-            /* ==footer== */
-            .footer{
-                width: 100%;
-                min-height: 100px;
-                padding: 20px 80px;
-                margin: 0;
-                background-color: #484872;
-                text-align: center;
-            }
-            .footer p{
-                color: whitesmoke;
-                margin: 20px auto;
-            }
+
+
             /* animations */
             img{
                 transition: transform .3s ease;
@@ -212,17 +223,173 @@
                 color: #fc036b;
                 cursor: pointer;
             }
-           .header-content h2{
-            transform: translateY(0px);
-            transition: opacity 1 ease;
-           }
-           .header-content h2:hover{
-            transform: translateY(0);
+       
+            @keyframes textmove {
+                0%{transform: translateY(0px); background-color: #fc036b;}
+                100%{transform: translateY(1px);}
+            }
+          
+           @media only screen and (max-width:450px) {
+            /* =logo= */
+            .title{
+                font-size: 28px;
+            }
+            .logo{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                font-size:30px;
+            }
+             .navbar svg{
+                    top: 30px;
+                    right: 28px;
+                    position: absolute;
+                    width: 30px;
+            }
+            /* =explore= */
+              .explore-contant{
+                width: 100vw;
+                height: 100vh;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .explore-contant h1{
+                font-size:20px;
+                margin:0px 30px;
+
+            }
+             .explore-contant p{
+                color: rgb(221,221,221);
+                 padding: 0px 10%;
+                font-size: 20px;
+                font-weight: 300;
+            }
+            .explore-contant .ctn{
+                margin-top: 40px;
+            }
+            /* =events= */
+             .events .row{
+                margin: 0px 0;
+                padding: 10px 50px;
+                justify-content: center;
+            }
+            .title{
+                text-align: center;
+                font-size: 16px;
+                 width: 100%;
+                padding:10px 20px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                color: #49497e;
+            }
+            .col img{
+                max-width: 120%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            .col h4{
+                font-size:25px;
+                color: #484872;
+                text-align: center;
+                margin: 15px auto;
+            }
+           .col p{
+                color: #7c7c7c;
+                width:100%;
+                text-align: center;
+                margin: 10px auto;
+            }
+            /* =tours= */
+             .tours{
+                width: 100%;
+                padding: 30px 0px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+             .content-col p{
+                padding: 0px 0%;
+                font-size: 20px;
+                font-weight: 300;
+                width: 300px;
+            }
            }
         /* nothing just like that */
-
+           @media only screen and (max-width:1009px){
+            /* =navbar= */
+            /* =explore= */
+            .explore-contant{
+                width: 100vw;
+                height: 100vh;
+                padding: 0px 0px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .explore-contant h1{
+                font-size:35px;
+                z-index: 2;
+            }
+             .explore-contant p{
+                z-index: 2;
+                color: rgb(221,221,221);
+                 padding: 30px 10%;
+                font-size:20px;
+                font-weight: 300;
+            }
+            .explore-contant .ctn{
+                margin-top: 10px;
+                z-index: 2;
+            }
+            #image-gallary{
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+            }
+            .row{
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-links{
+                display: none;
+            }
+            
+            .content-col p{
+                margin: 0;
+                width: 80%;
+                text-align: center;
+               
+            }
+            .content-col {
+                gap: 15px;
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+            }
+            /* =navbar= */
+            .logo{
+                position: absolute;
+                top: 30px;
+                left:40px;
+                font-size:30px;
+            }
+            .navbar svg{
+                    top: 30px;
+                    right:50px;
+                    position: absolute;
+                    width:28px;
+            }
+           }
         /* =mob= */ 
-         @media only screen and (max-width:350px){
+         @media only screen and (max-width:350px){ 
              .navbar{
                 padding: 0;
             
@@ -230,7 +397,7 @@
             .logo{
                 position: absolute;
                 top: 30px;
-                left: 30px;
+                left:40px;
                 font-size: 25px;
             }
             /* =navbar= */
@@ -248,9 +415,9 @@
             }
             .navbar svg{
                     top: 30px;
-                    right: 28px;
+                    right:30px;
                     position: absolute;
-                    width: 30px;
+                    width:28px;
             }
             /* =header= */
             .row{
@@ -264,7 +431,7 @@
             text-align: center;
         }
         .header-content h2{
-            font-size:24px;
+            font-size:20px;
         }
         .header-content h1{
             font-size: 20px;
@@ -286,48 +453,56 @@
             }
             .title{
                 text-align: center;
-                font-size: 15px;
+                font-size: 20px;
+                 width: 100%;
+                padding:10px 20px;
+                color: whitesmoke;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
                 color: #49497e;
             }
             .col img{
-                max-width: 170%;
+                max-width: 130%;
                 align-items: center;
                 justify-content: center;
                 display: flex;
             }
             .row .col{
-                margin: 20px auto;
+                margin: 0px auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
             .col h4{
-                font-size:11px;
+                font-size:22px;
                 margin: 20px;
                 color: #484872;
+                text-align: center;
             }
-            p{
+           .col p{
                 color: #7c7c7c;
-                width:170%;
+                width:100%;
+                /* padding: 0 20px; */
             }
             /* exploree */
              .explore-contant{
-                width: 100%;
-                padding: 50px 0px;
+                width: 100vw;
+                height: 100vh;
                 color: whitesmoke;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
             }
             .explore-contant h1{
-                font-size:25px;
+                font-size:20px;
             }
              .explore-contant p{
                 color: rgb(221,221,221);
-                padding: 0px 20%;
+                 padding: 20px 10%;
                 font-size: 20px;
                 font-weight: 300;
-                width: 400px;
+                width: 300px;
             }
             .explore-contant .ctn{
                 margin-top: 40px;
@@ -345,16 +520,20 @@
             font-size: 25px;
            }
             .content-col p{
-                padding: 0px 0%;
+                padding: 20px 10%;
                 font-size: 20px;
                 font-weight: 300;
                 width: 300px;
             }
-              #image-gallery img{
+              #image-gallary img{
                 width: 90%;
               }
             .tours .col{
                 width: 100%;
+            }
+            .content-col .ctn{
+                margin: 10px;
+                padding: 10px;
             }
             #image-gallary{
                 display: grid;
@@ -373,11 +552,40 @@
                 text-align: center;
             }
             .footer p{
-                color: whitesmoke;
+                color: black;
                 margin: 20px auto;
-                width:300px;
+                max-width:300px;
             }
         }
+        
+         .footer{
+            display: flex;
+            flex-direction: column;
+                width: 100%;
+                min-height: 100px;
+                background-color: #484872;
+              
+            }
+            .footer p{
+                color: black;
+                width: 80%;
+                text-align: center;
+                margin: 20px auto;
+            }
+            .explore::after{
+                content: "";
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                filter: opacity(0.3);
+                /* z-index: -1; */
+            }
+            /* nothing to change */
     </style>
 </head>
 <body>
@@ -433,7 +641,7 @@
         <div class="explore-contant">
             <h1>EXPLORE THE WORLD</h1>
             <div class="line"></div>
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima natus sunt odit reprehenderit deserunt doloribus omnis eum animi, quas iste aperiam eveniet, corporis dolorum?</P>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima natus sunt odit reprehenderit deserunt doloribus omnis eum animi, quas iste aperiam eveniet, corporis dolorum?</p>
         <a href="#" class="ctn">Learn More</a>
         </div>
     </div>
@@ -442,9 +650,9 @@
     <section class="tours">
         <div class="row">
             <div class="col  content-col">
-                <h1>UPCOMING TOURS & DESTINATION</h1>
+                <h1>UPCOMING  TOURS  AND  DESTINATION</h1>
                 <div class="line"></div>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veritatis, vel illum dicta magnam dolor obcaecati iusto suscipit est at fugiat nobis odio quos itaque harum delectus? Repellat, id sint.</P>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veritatis, vel illum dicta magnam dolor obcaecati iusto suscipit est at fugiat nobis odio quos itaque harum delectus? Repellat, id sint.</p>
                 <a href="#" class="ctn">Learn More</a>
             </div>
             <div class="col image-col">
@@ -460,7 +668,6 @@
 
     <!-- --==footer== -->
      <section class="footer">
-        
     <p>123 Fifth Avenue, My 10160, New York, USA| Phone: 800-123-456 |Email:contact@123</p>
     <p>Copyright @ 2020 Ourdoor Adventure</p>
      </section>
