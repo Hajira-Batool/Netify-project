@@ -60,7 +60,8 @@
             color: whitesmoke;
             text-align: center;
             animation-name: textmove;
-            animation: 4s ease;
+            animation-duration: 2s;
+            /* animation: 4s ease; */
         }
         .header-content h2{
             font-size: 6vmin;
@@ -94,6 +95,10 @@
         }
         
             /*Events  */
+            .events{
+                 animation-name: textmove;
+            animation-duration: 2s;
+            }
             .row .col{
                 display: flex;
                 flex-direction: column;
@@ -116,6 +121,8 @@
                 text-align: center;
                 font-size: 30px;
                 color: #49497e;
+                 animation-name: textmove;
+                 animation-duration: 4s;
             }
              .col h4{
                 font-size:20px;
@@ -139,6 +146,10 @@
                 column-gap: 10%;
                 padding: 10px 5%;
             }
+            /* .col img{
+                 animation-name: fadeLeft;
+            animation-duration: 2s;
+            } */
             /* --explore */
             .explore{
                 width: 100%;
@@ -151,6 +162,8 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 20px;
+                 animation-name: textmove;
+            animation-duration: 2s;
             }
             .explore-contant{
                 /* width: 60%; */
@@ -196,6 +209,8 @@
             .image-gallery img{
                 max-width: 250px;
                 padding: 10px;
+                animation-name: fadeLeft;
+            animation-duration: 2s;
             }
             .content-col h1{
                 font-size: 7vmin;
@@ -229,8 +244,13 @@
             }
        
             @keyframes textmove {
-                0%{transform: translateY(0px); background-color: #fc036b;}
-                100%{transform: translateY(1px);}
+                0%{transform: translateY(100px); opacity: 0;}
+                100%{transform: translateY(0); opacity: 1;}
+            }
+             @keyframes fadeLeft {
+                0%{transform: translateX(-100px);opacity: 0;}
+                100%{transform: translateX(0);opacity: 1;}
+                
             }
           
            @media only screen and (max-width:450px) {
