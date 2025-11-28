@@ -59,7 +59,7 @@
         .header-content{
             color: whitesmoke;
             text-align: center;
-            animation-name: textmove;
+            animation-name: fadeUp;
             animation-duration: 2s;
             /* animation: 4s ease; */
         }
@@ -95,16 +95,15 @@
         }
         
             /*Events  */
-            .events{
-                 animation-name: textmove;
-            animation-duration: 2s;
-            }
+
             .row .col{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                 animation-name: fadeUp;
+                animation-duration: 1s;
+                animation-delay: 700ms;
             }
-            
             .events .row{
                 margin: 50px 0;
                 padding: 0px 50px;
@@ -121,13 +120,15 @@
                 text-align: center;
                 font-size: 30px;
                 color: #49497e;
-                 animation-name: textmove;
-                 animation-duration: 4s;
+                 animation-name: fadeUp;
+                animation-duration: 1s;
+                animation-delay: 500ms;
             }
              .col h4{
                 font-size:20px;
                 margin: 20px auto;
                 color: #484872;
+
             }
              .col p{
                 font-size: 18px;
@@ -146,10 +147,6 @@
                 column-gap: 10%;
                 padding: 10px 5%;
             }
-            /* .col img{
-                 animation-name: fadeLeft;
-            animation-duration: 2s;
-            } */
             /* --explore */
             .explore{
                 width: 100%;
@@ -162,8 +159,6 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 20px;
-                 animation-name: textmove;
-            animation-duration: 2s;
             }
             .explore-contant{
                 /* width: 60%; */
@@ -177,6 +172,9 @@
             .explore-contant h1{
                 font-size: 60px;
                 z-index: 2;
+                 animation-name: fadeUp;
+                animation-duration: 1s;
+                animation-delay: 500ms;
                 /* margin: 50px; */
             }
             .explore-contant p{
@@ -186,11 +184,17 @@
                 padding: 40px 65px;
                 text-align: center;
                 z-index: 2;
+                 animation-name: fadeUp;
+                animation-duration: 1s;
+                animation-delay: 700ms;
         
             }
             .explore-contant .ctn{
                 margin-top: 30px;
                 z-index: 2;
+                 animation-name: fadeUp;
+                animation-duration: 1s;
+                animation-delay: 700ms;
             }
             .explore-contant .line{
             width: 150px;
@@ -199,36 +203,46 @@
             border-radius: 5px;
             margin: 5px auto;
               z-index: 2;
+               animation-name: fadeUp;
+                animation-duration: 1s;
+                animation-delay: 500ms;
         }
             
             /* ==tours== */
             .tours .image-gallery{
               display: grid;
               grid-template-columns: 1fr 1fr;
+              animation-name: rightFade;
+              animation-duration: 1.5s;
+              animation-delay: 700ms;
+            
             }
             .image-gallery img{
                 max-width: 250px;
                 padding: 10px;
-                animation-name: fadeLeft;
-            animation-duration: 2s;
             }
             .content-col h1{
                 font-size: 7vmin;
                 text-align: center;
                 color: #484872;
             }
+            
             .content-col .line{
             width: 150px;
             height: 4px;
             background-color: #fc036b;
             border-radius: 5px;
             margin: 5px auto;
+            
             }
-
+            #tours-text{
+                animation-name: leftFade;
+                animation-duration: 1.5s;
+            }
 
             /* animations */
             img{
-                transition: transform .3s ease;
+                transition: transform 500ms ease ;
             }
             img:hover{
                 transform: scale(1.1);
@@ -243,16 +257,11 @@
                 cursor: pointer;
             }
        
-            @keyframes textmove {
+             @keyframes fadeUp {
                 0%{transform: translateY(100px); opacity: 0;}
                 100%{transform: translateY(0); opacity: 1;}
-            }
-             @keyframes fadeLeft {
-                0%{transform: translateX(-100px);opacity: 0;}
-                100%{transform: translateX(0);opacity: 1;}
-                
-            }
-          
+            } 
+           
            @media only screen and (max-width:450px) {
             /* =logo= */
             .title{
@@ -609,6 +618,30 @@
                 filter: opacity(0.3);
                 /* z-index: -1; */
             }
+            @keyframes leftFade {
+                0%{
+                    transform: translateX(-200px);
+                    opacity: 0;
+                }
+                100%{
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes rightFade {
+                0%{
+                    transform: translateX(200px);
+                    opacity: 0;
+                }
+                100%{
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            #image-gallery{
+                animation-name: rightFade;
+                animation-duration: 1.5s;
+            }
             /* nothing to change */
     </style>
 </head>
@@ -673,14 +706,14 @@
     <!-- ==tours-- -->
     <section class="tours">
         <div class="row">
-            <div class="col  content-col">
+            <div id="tours-text" class="col  content-col tours-text">
                 <h1>UPCOMING  TOURS  AND  DESTINATION</h1>
                 <div class="line"></div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veritatis, vel illum dicta magnam dolor obcaecati iusto suscipit est at fugiat nobis odio quos itaque harum delectus? Repellat, id sint.</p>
                 <a href="#" class="ctn">Learn More</a>
             </div>
             <div class="col image-col">
-                <div id="image-gallary"  class="image-gallery">
+                <div id="image-gallery"  class="image-gallery">
                     <img src="OIP 5.jpg" alt="" width="270px" height="223px">
                     <img src="OIP 6.jpg" alt="" width="270px" height="223px">
                     <img src="OIP 7.jpg" alt="" width="270px" height="223px">
